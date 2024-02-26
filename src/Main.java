@@ -50,7 +50,7 @@ import java.util.Scanner;
 
 //Soru 3: Kullanıcıdan alınan bir cümlede belirli bir kelimenin kaç kez geçtiğini sayan bir Java programı yazın.
 
-public class Main{
+/*public class Main{
     public static void main(String[] args){
         Scanner get = new Scanner(System.in);
 
@@ -69,6 +69,29 @@ public class Main{
             }
         }
         System.out.println("'" + arananKelime + "' kelimesi cümle içinde " + sayac + " kez geçiyor.");
+
+    }
+}*/
+
+//Soru 5: Bir kelimenin içindeki tekrar eden harfleri kaldıran bir Java programı yazın.
+// (Örneğin, "programming" kelimesi için "progamin" sonucu alınmalıdır.)
+
+public class Main{
+    public static void main(String[] args){
+        Scanner get= new Scanner(System.in);
+
+        System.out.print("Bir kelime giriniz: ");
+        String kelime = get.nextLine();
+
+        StringBuilder yeniKelime = new StringBuilder();
+
+        for(int i=0; i< kelime.length(); i++){
+            char charr = kelime.charAt(i);
+            if(yeniKelime.indexOf(String.valueOf(charr)) == -1){
+                yeniKelime.append(charr);
+            }
+        }
+        System.out.println("Yeni Kelime -> "+ yeniKelime);
 
     }
 }
