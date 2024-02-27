@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 //Soru 1: Verilen bir cümlede kaç adet boşluk karakteri bulunduğunu bulan bir Java programı yazın.
@@ -76,7 +77,7 @@ import java.util.Scanner;
 //Soru 5: Bir kelimenin içindeki tekrar eden harfleri kaldıran bir Java programı yazın.
 // (Örneğin, "programming" kelimesi için "progamin" sonucu alınmalıdır.)
 
-public class Main{
+/*public class Main{
     public static void main(String[] args){
         Scanner get= new Scanner(System.in);
 
@@ -92,6 +93,35 @@ public class Main{
             }
         }
         System.out.println("Yeni Kelime -> "+ yeniKelime);
+
+    }
+}*/
+
+//Soru 7: Bir cümledeki tüm kelimelerin ilk harfini büyük harfe dönüştüren bir Java programı yazın.
+
+public class Main{
+    public static void main(String[] args){
+        Scanner get = new Scanner(System.in);
+
+        System.out.print("Bir cümle girin: ");
+        String cumle= get.nextLine();
+
+        char[] karakterler = cumle.toCharArray();
+
+        boolean kelimeBaslangici = true;
+        for(int i=0; i<karakterler.length; i++){
+            if (Character.isLetter(karakterler[i])) {
+                if (kelimeBaslangici) {
+                    karakterler[i] = Character.toUpperCase(karakterler[i]);
+                    kelimeBaslangici = false;
+                }
+            } else {
+                kelimeBaslangici = true;
+            }
+        }
+
+        String sonuc = new String(karakterler);
+        System.out.println("Sonuç: " +sonuc);
 
     }
 }
