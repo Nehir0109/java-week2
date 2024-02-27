@@ -149,7 +149,7 @@ import java.util.Scanner;
 
 //Soru 9: Bir cümlede geçen her kelimenin uzunluğunu hesaplayarak, bu uzunlukları ekrana yazdıran bir Java programı yazın.
 
-public class Main{
+/*public class Main{
     public static void main(String[] args){
         Scanner get= new Scanner(System.in);
 
@@ -161,5 +161,31 @@ public class Main{
         for (String kelime : kelimeler) {
             System.out.println(kelime.length());
         }
+    }
+}*/
+
+//Soru 10:Bir kelimenin içindeki sesli harfleri ve sessiz harfleri sayan bir Java programı yazın.
+// (Örneğin, "Merhaba" kelimesi için 3 sesli, 4 sessiz harf sonucu alınmalıdır.)
+public class Main{
+    public static void main(String[] args){
+        Scanner get= new Scanner(System.in);
+
+        System.out.print("Bir kelime giriniz: ");
+        String kelime= get.nextLine();
+
+        int sesli =0;
+        int sessiz =0;
+
+        for(int i=0; i<kelime.length(); i++){
+            char harf = kelime.charAt(i);
+            if (harf == 'a' || harf == 'e' || harf == 'ı' || harf == 'i' || harf == 'o' || harf == 'ö' || harf == 'u' || harf == 'ü'){
+                sesli ++;
+            }else if(harf >= 'a' && harf <= 'z'){
+                sessiz ++;
+            }
+        }
+
+        System.out.print("Sesli harf sayısı: "+ sesli+"\n");
+        System.out.print("Sessiz harf sayısı: "+ sessiz);
     }
 }
