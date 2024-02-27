@@ -127,7 +127,7 @@ import java.util.Scanner;
 }*/
 
 // Soru 8: Bir cümledeki en uzun kelimeyi bulan bir Java programı yazın.
-public class Main{
+/*public class Main{
     public static void main(String[] args){
         Scanner get= new Scanner(System.in);
 
@@ -144,5 +144,22 @@ public class Main{
         }
 
         System.out.println("En uzun kelime: " + enUzunKelime);
+    }
+}*/
+
+//Soru 9: Bir cümlede geçen her kelimenin uzunluğunu hesaplayarak, bu uzunlukları ekrana yazdıran bir Java programı yazın.
+
+public class Main{
+    public static void main(String[] args){
+        Scanner get= new Scanner(System.in);
+
+        System.out.print("Bir cümle girin: ");
+        String cumle = get.nextLine();
+
+        String[] kelimeler =cumle.split(" ");
+        System.out.println("Her kelimenin uzunluğu:");
+        for (String kelime : kelimeler) {
+            System.out.println(kelime.length());
+        }
     }
 }
