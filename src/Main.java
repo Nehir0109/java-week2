@@ -99,7 +99,7 @@ import java.util.Scanner;
 
 //Soru 7: Bir cümledeki tüm kelimelerin ilk harfini büyük harfe dönüştüren bir Java programı yazın.
 
-public class Main{
+/*public class Main{
     public static void main(String[] args){
         Scanner get = new Scanner(System.in);
 
@@ -123,5 +123,26 @@ public class Main{
         String sonuc = new String(karakterler);
         System.out.println("Sonuç: " +sonuc);
 
+    }
+}*/
+
+// Soru 8: Bir cümledeki en uzun kelimeyi bulan bir Java programı yazın.
+public class Main{
+    public static void main(String[] args){
+        Scanner get= new Scanner(System.in);
+
+        System.out.print("Bir cümle giriniz: ");
+        String cumle = get.nextLine();
+
+        String[] kelimeler = cumle.split(" "); //
+
+        String enUzunKelime = "";
+        for (String kelime : kelimeler) {
+            if (kelime.length() > enUzunKelime.length()) {
+                enUzunKelime = kelime;
+            }
+        }
+
+        System.out.println("En uzun kelime: " + enUzunKelime);
     }
 }
