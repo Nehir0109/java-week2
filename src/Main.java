@@ -192,7 +192,7 @@ import java.util.Scanner;
 
 //Soru 4: Bir cümledeki kelimeleri tersten sıralayarak ekrana yazdıran bir Java programı yazın.
 
-public class Main{
+/*public class Main{
     public static void main(String[] args){
         Scanner get= new Scanner(System.in);
 
@@ -213,5 +213,46 @@ public class Main{
         }
 
         return reverse;
+    }
+}*/
+
+//Soru 6: Kullanıcıdan alınan iki kelimenin anagram olup olmadığını kontrol eden bir Java programı yazın.
+// (Anagramlar, aynı harfleri içeren fakat sıralamaları farklı olan kelimelerdir.)
+
+public class Main{
+    public static void main(String[] args){
+        Scanner get= new Scanner(System.in);
+
+        System.out.print("Bir kelime giriniz: ");
+        String word1 = get.nextLine();
+        System.out.print("Bir kelime daha giriniz: ");
+        String word2 = get.nextLine();
+
+        if(anagram(word1,word2)){
+            System.out.println(word1+ " ile " +word2+ " anagramdır.");
+        }else {
+            System.out.println(word1+ " ile " +word2+ " anagram değildir.");
+        }
+    }
+
+    public static boolean anagram(String word1, String word2){
+
+        if(word1.length() != word2.length() ){
+            return false;
+        }
+
+        char[] word1Array = word1.toLowerCase().toCharArray();
+        char[] word2Array = word2.toLowerCase().toCharArray();
+
+        Arrays.sort(word1Array);
+        Arrays.sort(word2Array);
+
+        for(int i=0; i<word1Array.length; i++){
+            if(word1Array[i] != word2Array[i]){
+                return false;
+            }
+        }
+
+        return true;
     }
 }
