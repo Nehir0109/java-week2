@@ -166,7 +166,7 @@ import java.util.Scanner;
 
 //Soru 10:Bir kelimenin içindeki sesli harfleri ve sessiz harfleri sayan bir Java programı yazın.
 // (Örneğin, "Merhaba" kelimesi için 3 sesli, 4 sessiz harf sonucu alınmalıdır.)
-public class Main{
+/*public class Main{
     public static void main(String[] args){
         Scanner get= new Scanner(System.in);
 
@@ -187,5 +187,31 @@ public class Main{
 
         System.out.print("Sesli harf sayısı: "+ sesli+"\n");
         System.out.print("Sessiz harf sayısı: "+ sessiz);
+    }
+}*/
+
+//Soru 4: Bir cümledeki kelimeleri tersten sıralayarak ekrana yazdıran bir Java programı yazın.
+
+public class Main{
+    public static void main(String[] args){
+        Scanner get= new Scanner(System.in);
+
+        System.out.print("Bir cümle giriniz: ");
+        String sentence = get.nextLine();
+
+        System.out.println(reverseWords(sentence));
+    }
+    public static String reverseWords(String sentence){
+
+        String[] words = sentence.split(" ");
+        String reverse = "";
+        for(int i=words.length -1; i>=0; i--){
+            reverse+= words[i];
+            if(i != 0){
+                reverse+= " ";
+            }
+        }
+
+        return reverse;
     }
 }
