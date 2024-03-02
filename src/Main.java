@@ -216,10 +216,37 @@ import java.util.Scanner;
     }
 }*/
 
+//Soru 4 (2): hem kelimeleri hem de kelimelerin harflerini tersinden yazdıran kod
+
+public class Main{
+    public static void main(String[] args){
+        Scanner get= new Scanner(System.in);
+
+        System.out.print("Bir cümle giriniz: ");
+        String word = get.nextLine();
+
+        reversWordss(word);
+    }
+
+    public static void reversWordss(String word){
+        char[] words = word.toCharArray();
+
+        String ress = "";
+
+
+
+        for(int i=words.length -1; i>=0;i--){ //döngüyü tersten döndürüyoruz
+            ress += words[i];
+        }
+        System.out.println(ress);
+    }
+
+}
+
 //Soru 6: Kullanıcıdan alınan iki kelimenin anagram olup olmadığını kontrol eden bir Java programı yazın.
 // (Anagramlar, aynı harfleri içeren fakat sıralamaları farklı olan kelimelerdir.)
 
-public class Main{
+/*public class Main{
     public static void main(String[] args){
         Scanner get= new Scanner(System.in);
 
@@ -234,7 +261,6 @@ public class Main{
             System.out.println(word1+ " ile " +word2+ " anagram değildir.");
         }
     }
-
     public static boolean anagram(String word1, String word2){
 
         if(word1.length() != word2.length() ){
@@ -255,4 +281,4 @@ public class Main{
 
         return true;
     }
-}
+}*/
